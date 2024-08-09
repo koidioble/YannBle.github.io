@@ -9,23 +9,23 @@ class ContactPage extends StatefulWidget {
   const ContactPage({super.key});
 
   @override
-  State<ContactPage> createState() => _ContactPageState();
+  State createState() => _ContactPageState();
 }
 
 class _ContactPageState extends State<ContactPage> {
   final _formKey = GlobalKey<FormState>();
-
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _messageController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: darkOlive,
       appBar: AppBar(
         title: Text(
-          "send me a message.",
+          "Send Me a Message.",
           style: TextStyle(color: lightOlive),
         ),
         backgroundColor: darkOlive,
@@ -41,7 +41,6 @@ class _ContactPageState extends State<ContactPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Horizontal line
                   Padding(
                     padding: const EdgeInsets.only(
                         left: 16.0, right: 16.0, bottom: 6.0),
@@ -51,7 +50,6 @@ class _ContactPageState extends State<ContactPage> {
                     ),
                   ),
                   const SizedBox(height: 6),
-
                   InkWell(
                     hoverColor: canaryYellow,
                     onTap: () {},
@@ -110,13 +108,13 @@ class _ContactPageState extends State<ContactPage> {
                                 Expanded(
                                   child: OutlinedButton(
                                     style: ButtonStyle(
-                                        side: WidgetStateProperty.all(
+                                      side: MaterialStateProperty.all(
                                           BorderSide(
-                                              color: canaryYellow, width: 2),
-                                        ),
-                                        backgroundColor:
-                                            WidgetStateProperty.all(
-                                                Colors.black)),
+                                              color: canaryYellow, width: 2)),
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              Colors.black),
+                                    ),
                                     onPressed: () async {
                                       if (_formKey.currentState!.validate()) {
                                         // Collect the data from the text controllers
@@ -132,11 +130,10 @@ class _ContactPageState extends State<ContactPage> {
 
                                         // Optionally show a success message
                                         ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          const SnackBar(
-                                              content: Text(
-                                                  'Message sent successfully!')),
-                                        );
+                                            .showSnackBar(const SnackBar(
+                                          content: Text(
+                                              'Message sent successfully!'),
+                                        ));
 
                                         // Clear the form fields
                                         _nameController.clear();
@@ -155,7 +152,7 @@ class _ContactPageState extends State<ContactPage> {
                                   ),
                                 ),
                               ],
-                            )
+                            ),
                           ],
                         ),
                       ),
@@ -163,9 +160,7 @@ class _ContactPageState extends State<ContactPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Divider(
-                      color: lightOlive,
-                    ),
+                    child: Divider(color: lightOlive),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
@@ -222,33 +217,33 @@ class _ContactPageState extends State<ContactPage> {
       ),
     );
   }
-}
 
-Future<void> sendEmail(
-    String email, String message, String name, String phone) async {
-  final smtpServer = SmtpServer('smtp.office365.com',
-      username: 'yannble@hotmail.com', // Your Hotmail email
-      password: '_DeBabi225', // Your Hotmail password or App Password
-      port: 587, // Port for TLS
-      ssl: false // Use SSL
-      );
+  Future<void> sendEmail(
+      String email, String message, String name, String phone) async {
+    final smtpServer = SmtpServer('smtp.office365.com',
+        username: 'yannble@hotmail.com', // Your Hotmail email
+        password: '_DeBabi225', // Your Hotmail password or App Password
+        port: 587, // Port for TLS
+        ssl: false); // Use SSL
 
-  final msg = Message()
-    ..from = const Address(
-        'yannble@hotmail.com', 'Koidio (Y.) Blé') // Your Hotmail email and name
-    ..recipients.add('yannble@hotmail.com') // Recipient email
-    ..subject = 'New Message from Your Website'
-    ..text = 'Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message';
+    final msg = Message()
+      ..from = const Address('yannble@hotmail.com',
+          'Koidio (Y.) Blé') // Your Hotmail email and name
+      ..recipients.add('yannble@hotmail.com') // Recipient email
+      ..subject = 'New Message from Your Website'
+      ..text =
+          'Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message';
 
-  try {
-    await send(msg, smtpServer);
-    ('Email sent!');
-  } on MailerException catch (e) {
-    ('Message not sent. $e');
-    for (var p in e.problems) {
-      ('Problem: ${p.code}: ${p.msg}');
+    try {
+      await send(msg, smtpServer);
+      print('Email sent!');
+    } on MailerException catch (e) {
+      print('Message not sent. $e');
+      for (var p in e.problems) {
+        print('Problem: ${p.code}: ${p.msg}');
+      }
+    } catch (e) {
+      print('An unexpected error occurred: $e');
     }
-  } catch (e) {
-    ('An unexpected error occurred: $e');
   }
 }
