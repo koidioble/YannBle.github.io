@@ -54,7 +54,7 @@ class _AboutPageState extends State<AboutPage> {
                         child: Padding(
                           padding: const EdgeInsets.all(9.99),
                           child: Text(
-                            "A Computer & Software Engineer.",
+                            "A Software Engineer.",
                             style: GoogleFonts.ubuntu(color: lightOlive),
                           ),
                         ),
