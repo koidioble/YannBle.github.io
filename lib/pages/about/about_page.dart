@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:yannble/responsive/responsive.dart';
 import 'package:yannble/widgets/colors.dart';
 import 'package:yannble/widgets/my_divider.dart';
 import 'package:yannble/widgets/my_signature.dart';

@@ -8,7 +8,6 @@ import 'package:yannble/responsive/responsive.dart';
 import 'package:yannble/widgets/colors.dart';
 import 'package:yannble/widgets/email.dart';
 import 'package:yannble/widgets/github.dart';
-import 'package:yannble/widgets/instagram.dart';
 import 'package:yannble/widgets/linkedin.dart';
 import 'package:yannble/widgets/my_divider.dart';
 import 'package:yannble/widgets/my_signature.dart';
