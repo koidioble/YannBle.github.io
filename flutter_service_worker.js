@@ -3,19 +3,34 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
+<<<<<<< HEAD
 const RESOURCES = {"flutter_bootstrap.js": "9ddf1a7769b1d7108c5601ebed801d4d",
 "version.json": "9e1efd4735fb681eef211e45bb73d9d6",
 "index.html": "648fc3735632c7703ca3516e12157b64",
 "/": "648fc3735632c7703ca3516e12157b64",
+=======
+const RESOURCES = {"flutter_bootstrap.js": "06fe3432ca47e2caecb8b64c2a7f0f8a",
+"version.json": "9e1efd4735fb681eef211e45bb73d9d6",
+"index.html": "e4002906448275f7889bdd1ae9ae0329",
+"/": "e4002906448275f7889bdd1ae9ae0329",
+>>>>>>> origin/main
 "main.dart.js": "84b638b2257020ff951a067e6400dfb2",
 "flutter.js": "f393d3c16b631f36852323de8e583132",
 "favicon.png": "6b650c4cdd49dfc011ad87216a2f19f3",
 "yannble.png": "4f8dd70faa8fa70d0d9d73c1d6917771",
+<<<<<<< HEAD
+=======
+"icons/favicon.ico": "13a88d2b5badfff611cb88e2ebfa642e",
+>>>>>>> origin/main
 "icons/Icon-192.png": "4f8dd70faa8fa70d0d9d73c1d6917771",
 "icons/Icon-maskable-192.png": "143467794993b38c03979ccb1a6a1d97",
 "icons/Icon-maskable-512.png": "74c0a0182cf1ac7bcb2e5f4fcc42c4ff",
 "icons/Icon-512.png": "41b2bbb632fca4fc7d90d6d177642305",
+<<<<<<< HEAD
 "manifest.json": "7997cc236e118568d499aa4fd675ab14",
+=======
+"manifest.json": "ddb3a5a35d0c473c5ab6b4302028f958",
+>>>>>>> origin/main
 "assets/AssetManifest.json": "b292f843079b77a7bac179f4080d5253",
 "assets/NOTICES": "90a91c5ccaffe1482b7a731dffdcd9b9",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
@@ -28,10 +43,13 @@ const RESOURCES = {"flutter_bootstrap.js": "9ddf1a7769b1d7108c5601ebed801d4d",
 "assets/assets/pics/pic2.png": "94a27c9ced7c4231733ca5c8bc05246e",
 "assets/assets/pics/pic_f.png": "5856cecea7c5c37c62769d410235dabe",
 "assets/assets/pics/pic.png": "af60b5088b9562d10b9dcbc6ed662d6d",
+<<<<<<< HEAD
 "assets/assets/assets/logo/github_logo.png": "aafa237b9fa15efeea2bf957e311f179",
 "assets/assets/assets/logo/instagram_logo.png": "da3e4fda686612ac5ecd11bf341f64e7",
 "assets/assets/assets/logo/gmail_logo.png": "7f1d37c86aa8f6979747a62ca263c759",
 "assets/assets/assets/logo/linkedin_logo.png": "596eb5ed0c92d09350e3d199609bf6de",
+=======
+>>>>>>> origin/main
 "canvaskit/skwasm.js": "694fda5704053957c2594de355805228",
 "canvaskit/skwasm.js.symbols": "07d1cc991d9e350f595f8c1c213bc5d7",
 "canvaskit/canvaskit.js.symbols": "8d1bd5cff406d02f11e3df1b7f231069",
