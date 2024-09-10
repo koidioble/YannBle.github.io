@@ -104,7 +104,7 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                                 ),
                                 const SizedBox(height: 90),
                                 Text(
-                                  'Web Designer',
+                                  'Web Development',
                                   style: GoogleFonts.ubuntuMono(
                                     color: lightOlive,
                                     fontSize: 33,
@@ -357,7 +357,7 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                                 ),
                                 const SizedBox(height: 90),
                                 Text(
-                                  'Flutter Developper',
+                                  'Flutter Development',
                                   style: GoogleFonts.ubuntuMono(
                                     color: lightOlive,
                                     fontSize: 33,
@@ -579,7 +579,7 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                                 ),
                                 const SizedBox(height: 90),
                                 Text(
-                                  'Software Engineer',
+                                  'Software Development',
                                   style: GoogleFonts.ubuntuMono(
                                     color: lightOlive,
                                     fontSize: 33,

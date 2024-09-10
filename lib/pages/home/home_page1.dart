@@ -116,10 +116,19 @@ class _HomePage1State extends State<HomePage1> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: <Widget>[
-                                              // ICON info //
-                                              Icon(
-                                                Icons.info_outlined,
+                                              // ICONbutton info //
+                                              IconButton(
+                                                hoverColor: midOlive,
                                                 color: lightGreen100,
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const AboutPage()));
+                                                },
+                                                icon: const Icon(
+                                                    Icons.info_outlined),
                                               ),
                                             ],
                                           ),
@@ -139,9 +148,14 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: <Widget>[
                                                   InkWell(
-                                                    focusColor: green300,
-                                                    hoverColor: green300,
-                                                    onTap: () {},
+                                                    hoverColor: lightOlive,
+                                                    onTap: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  const AboutPage()));
+                                                    },
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -160,7 +174,7 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: <Widget>[
                                                   InkWell(
-                                                    hoverColor: canaryYellow,
+                                                    hoverColor: midOlive,
                                                     onTap: () {
                                                       Navigator.push(
                                                           context,
@@ -200,13 +214,23 @@ class _HomePage1State extends State<HomePage1> {
                                   collapsedIconColor: canaryYellow,
                                   title: Row(
                                     children: [
-                                      Text(
-                                        'About:',
-                                        style: GoogleFonts.ubuntuMono(
-                                          color: Colors.lime[100],
-                                          decoration: TextDecoration.underline,
-                                          decorationColor: Colors.lime[100],
-                                          decorationThickness: 3,
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            color: midOlive,
+                                            border: Border.all(
+                                                color: transparentColor)),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(3.0),
+                                          child: Text(
+                                            'About:',
+                                            style: GoogleFonts.ubuntuMono(
+                                              color: Colors.lime[100],
+                                              decoration:
+                                                  TextDecoration.underline,
+                                              decorationColor: Colors.lime[100],
+                                              decorationThickness: 3,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -214,22 +238,115 @@ class _HomePage1State extends State<HomePage1> {
                                   expandedAlignment: Alignment.centerLeft,
                                   childrenPadding: const EdgeInsets.all(16),
                                   children: [
-                                    Text(
-                                      '∙ Name: Koidio (Y.) Blé',
-                                      style: GoogleFonts.ubuntuMono(
-                                          color: Colors.lime[100]),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              color: midOlive,
+                                              border: Border.all(
+                                                  color: transparentColor)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: Text(
+                                              ' ∙ Name :',
+                                              style: GoogleFonts.ubuntuMono(
+                                                  color: Colors.lime[100]),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: midOlive,
+                                                border: Border.all(
+                                                    color: transparentColor)),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Koidio (Y.) Blé.',
+                                                style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100]),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     const SizedBox(height: 9),
-                                    Text(
-                                      '∙ Occupation: Full-Stack Engineer.',
-                                      style: GoogleFonts.ubuntuMono(
-                                          color: Colors.lime[100]),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              color: midOlive,
+                                              border: Border.all(
+                                                  color: transparentColor)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: Text(
+                                              ' ∙ Occupation :',
+                                              style: GoogleFonts.ubuntuMono(
+                                                  color: Colors.lime[100]),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: midOlive,
+                                                border: Border.all(
+                                                    color: transparentColor)),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Developer.',
+                                                style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100]),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                     const SizedBox(height: 9),
-                                    Text(
-                                      "∙ Passion: Code Softwares",
-                                      style: GoogleFonts.ubuntuMono(
-                                          color: Colors.lime[100]),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              color: midOlive,
+                                              border: Border.all(
+                                                  color: transparentColor)),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(3.0),
+                                            child: Text(
+                                              " ∙ Passion :",
+                                              style: GoogleFonts.ubuntuMono(
+                                                  color: Colors.lime[100]),
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                                color: midOlive,
+                                                border: Border.all(
+                                                    color: transparentColor)),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Coding.',
+                                                style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100]),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
                                 ),
@@ -278,10 +395,20 @@ class _HomePage1State extends State<HomePage1> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Icon(
-                                                Icons.work_outline_outlined,
-                                                color: lightGreen100,
-                                              )
+                                              IconButton(
+                                                hoverColor: midOlive,
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ConsultancyPage()));
+                                                },
+                                                icon: Icon(
+                                                  Icons.work_outline_outlined,
+                                                  color: lightGreen100,
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -301,8 +428,7 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: <Widget>[
                                                   InkWell(
-                                                    focusColor: green300,
-                                                    hoverColor: green300,
+                                                    hoverColor: lightOlive,
                                                     onTap: () {},
                                                     child: Padding(
                                                       padding:
@@ -321,7 +447,7 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: <Widget>[
                                                   InkWell(
-                                                    hoverColor: canaryYellow,
+                                                    hoverColor: midOlive,
                                                     onTap: () {
                                                       Navigator.push(
                                                           context,
@@ -363,14 +489,25 @@ class _HomePage1State extends State<HomePage1> {
                                       collapsedIconColor: canaryYellow,
                                       title: Row(
                                         children: [
-                                          Text(
-                                            'Consultancy:',
-                                            style: GoogleFonts.ubuntuMono(
-                                              color: Colors.lime[100],
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              decorationColor: Colors.lime[100],
-                                              decorationThickness: 3,
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: midOlive,
+                                                border: Border.all(
+                                                    color: transparentColor)),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Consultancy:',
+                                                style: GoogleFonts.ubuntuMono(
+                                                  color: Colors.lime[100],
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  decorationColor:
+                                                      Colors.lime[100],
+                                                  decorationThickness: 3,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -378,25 +515,73 @@ class _HomePage1State extends State<HomePage1> {
                                       expandedAlignment: Alignment.centerLeft,
                                       childrenPadding: const EdgeInsets.all(16),
                                       children: [
-                                        Text(
-                                          "∙ Web Designer.",
-                                          style: GoogleFonts.ubuntuMono(
-                                            color: Colors.lime[100],
-                                            fontWeight: FontWeight.w300,
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  color: midOlive,
+                                                  border: Border.all(
+                                                      color: transparentColor)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                  " ∙ Web Development.",
+                                                  style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100],
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        Text(
-                                          "∙ Software Engineer.",
-                                          style: GoogleFonts.ubuntuMono(
-                                            color: Colors.lime[100],
-                                            fontWeight: FontWeight.w300,
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  color: midOlive,
+                                                  border: Border.all(
+                                                      color: transparentColor)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                  " ∙ Flutter Development.",
+                                                  style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100],
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        Text(
-                                          "∙ Flutter Development.",
-                                          style: GoogleFonts.ubuntuMono(
-                                            color: Colors.lime[100],
-                                            fontWeight: FontWeight.w300,
+                                        Padding(
+                                          padding: const EdgeInsets.all(9),
+                                          child: InkWell(
+                                            onTap: () {},
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                  color: midOlive,
+                                                  border: Border.all(
+                                                      color: transparentColor)),
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(3.0),
+                                                child: Text(
+                                                  " ∙ Software Development.",
+                                                  style: GoogleFonts.ubuntuMono(
+                                                    color: Colors.lime[100],
+                                                    fontWeight: FontWeight.w300,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ],
@@ -445,10 +630,21 @@ class _HomePage1State extends State<HomePage1> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: <Widget>[
-                                              Icon(
-                                                Icons.contacts_outlined,
-                                                color: lightGreen100,
-                                              )
+                                              // ICONbutton info //
+                                              IconButton(
+                                                hoverColor: midOlive,
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              const ContactPage()));
+                                                },
+                                                icon: Icon(
+                                                  Icons.contacts_outlined,
+                                                  color: lightGreen100,
+                                                ),
+                                              ),
                                             ],
                                           ),
                                         ),
@@ -467,7 +663,7 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: [
                                                   InkWell(
-                                                    hoverColor: green300,
+                                                    hoverColor: lightOlive,
                                                     onTap: () {},
                                                     child: Padding(
                                                       padding:
@@ -486,7 +682,7 @@ class _HomePage1State extends State<HomePage1> {
                                               Row(
                                                 children: <Widget>[
                                                   InkWell(
-                                                    hoverColor: canaryYellow,
+                                                    hoverColor: midOlive,
                                                     onTap: () {
                                                       Navigator.push(
                                                           context,
@@ -528,14 +724,25 @@ class _HomePage1State extends State<HomePage1> {
                                       iconColor: darkOlive,
                                       title: Row(
                                         children: [
-                                          Text(
-                                            'Contact:',
-                                            style: GoogleFonts.ubuntuMono(
-                                              color: Colors.lime[100],
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              decorationColor: Colors.lime[100],
-                                              decorationThickness: 3,
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: midOlive,
+                                                border: Border.all(
+                                                    color: transparentColor)),
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(3.0),
+                                              child: Text(
+                                                'Contact:',
+                                                style: GoogleFonts.ubuntuMono(
+                                                  color: Colors.lime[100],
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  decorationColor:
+                                                      Colors.lime[100],
+                                                  decorationThickness: 3,
+                                                ),
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -543,54 +750,103 @@ class _HomePage1State extends State<HomePage1> {
                                       expandedAlignment: Alignment.centerLeft,
                                       childrenPadding: const EdgeInsets.all(16),
                                       children: [
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "∙ Email:",
-                                              style: GoogleFonts.ubuntuMono(
-                                                color: Colors.lime[100],
-                                                fontWeight: FontWeight.w300,
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.all(9),
-                                              child: EmailButton(
-                                                emailAddress:
-                                                    'koidioble@gmail.com',
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        SingleChildScrollView(
-                                          scrollDirection: Axis.horizontal,
+                                        Padding(
+                                          padding: const EdgeInsets.all(9.0),
                                           child: Row(
                                             children: [
-                                              Text(
-                                                "∙ Portofolio:",
-                                                style: GoogleFonts.ubuntuMono(
-                                                  color: Colors.lime[100],
-                                                  fontWeight: FontWeight.w300,
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                    color: midOlive,
+                                                    border: Border.all(
+                                                        color:
+                                                            transparentColor)),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                    "∙ Email :",
+                                                    style:
+                                                        GoogleFonts.ubuntuMono(
+                                                      color: Colors.lime[100],
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
+                                                  ),
                                                 ),
                                               ),
                                               const Padding(
                                                 padding: EdgeInsets.all(9),
-                                                child: PortfolioLink(),
+                                                child: EmailButton(
+                                                  emailAddress:
+                                                      'koidioble@gmail.com',
+                                                ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              "∙ Social:",
-                                              style: GoogleFonts.ubuntuMono(
-                                                color: Colors.lime[100],
-                                                fontWeight: FontWeight.w300,
-                                              ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(9.0),
+                                          child: SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              children: [
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      color: midOlive,
+                                                      border: Border.all(
+                                                          color:
+                                                              transparentColor)),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            3.0),
+                                                    child: Text(
+                                                      "∙ Portofolio :",
+                                                      style: GoogleFonts
+                                                          .ubuntuMono(
+                                                        color: Colors.lime[100],
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                const Padding(
+                                                  padding: EdgeInsets.all(9),
+                                                  child: PortfolioLink(),
+                                                ),
+                                              ],
                                             ),
-                                            const LinkedinLink(),
-                                            const GithubLink()
-                                          ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(9.0),
+                                          child: Row(
+                                            children: [
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                    color: midOlive,
+                                                    border: Border.all(
+                                                        color:
+                                                            transparentColor)),
+                                                child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(3.0),
+                                                  child: Text(
+                                                    "∙ Social :",
+                                                    style:
+                                                        GoogleFonts.ubuntuMono(
+                                                      color: Colors.lime[100],
+                                                      fontWeight:
+                                                          FontWeight.w300,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              const LinkedinLink(),
+                                              const GithubLink()
+                                            ],
+                                          ),
                                         ),
                                       ],
                                     ),
