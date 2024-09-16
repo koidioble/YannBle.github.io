@@ -1,6 +1,6 @@
-# yannble
+# Koidio (Y.) Blé - Portfolio.
 
-A new Flutter project.
+A portfolio showcasing Koidio (Y.) Blé's projects and skills.
 
 ## Getting Started
 
