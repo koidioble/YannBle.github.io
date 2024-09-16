@@ -1,6 +1,6 @@
 # Koidio (Y.) Blé - Portfolio.
 
-A portfolio showcasing Yann Blé's projects and skills.
+A portfolio showcasing Koidio (Y.) Blé's projects and skills.
 
 ## Getting Started
 
