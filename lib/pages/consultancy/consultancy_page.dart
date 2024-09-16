@@ -31,20 +31,26 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
           style: TextStyle(color: lightOlive),
         ),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(30.0),
+          preferredSize: const Size.fromHeight(60.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
                   onPressed: () => _controllerPageView.previousPage(
                       duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_left_outlined)),
+                      curve: Curves.elasticIn),
+                  icon: Icon(
+                    Icons.arrow_back_outlined,
+                    color: lightOlive,
+                  )),
               IconButton(
                   onPressed: () => _controllerPageView.nextPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_right_outlined)),
+                      duration: const Duration(seconds: 3),
+                      curve: Curves.elasticInOut),
+                  icon: Icon(
+                    Icons.arrow_forward_outlined,
+                    color: lightOlive,
+                  )),
             ],
           ),
         ),

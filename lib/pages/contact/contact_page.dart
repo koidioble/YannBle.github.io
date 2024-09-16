@@ -63,6 +63,7 @@ class _ContactPageState extends State<ContactPage> {
                   ),
                   child: Form(
                     key: _formKey,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -87,13 +88,58 @@ class _ContactPageState extends State<ContactPage> {
                               child: Column(
                                 children: [
                                   contactFormField(
-                                      'Name', 1, "Your Name", _nameController),
-                                  contactFormField('Email', 1, "Your Email",
-                                      _emailController),
-                                  contactFormField('Phone Number', 1,
-                                      "Your Phone Number", _phoneController),
-                                  contactFormField("Message", 12,
-                                      "Your Message", _messageController),
+                                    'Name',
+                                    1,
+                                    "Your Name",
+                                    _nameController,
+                                    (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter your name';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                  contactFormField(
+                                    'Email',
+                                    1,
+                                    "Your Email",
+                                    _emailController,
+                                    (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter your email';
+                                      }
+                                      if (!RegExp(
+                                              r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+                                          .hasMatch(value)) {
+                                        return 'Please enter a valid email address';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                  contactFormField(
+                                    'Phone Number',
+                                    1,
+                                    "Your Phone Number",
+                                    _phoneController,
+                                    (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter your phone number';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                  contactFormField(
+                                    "Message",
+                                    12,
+                                    "Your Message",
+                                    _messageController,
+                                    (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter your message';
+                                      }
+                                      return null;
+                                    },
+                                  ),
                                   Row(
                                     children: [
                                       Expanded(
@@ -124,12 +170,13 @@ class _ContactPageState extends State<ContactPage> {
                                               await sendEmail(
                                                   email, message, name, phone);
 
-                                              // Optionally show a success message
+                                              // Show a success message
                                               ScaffoldMessenger.of(context)
-                                                  .showSnackBar(const SnackBar(
-                                                content: Text(
-                                                    'Message sent successfully!'),
-                                              ));
+                                                  .showSnackBar(
+                                                const SnackBar(
+                                                    content: Text(
+                                                        'Message sent successfully!')),
+                                              );
 
                                               // Clear the form fields
                                               _nameController.clear();
@@ -141,9 +188,10 @@ class _ContactPageState extends State<ContactPage> {
                                           child: Text(
                                             "Submit",
                                             style: TextStyle(
-                                                color: lightGreen100,
-                                                fontSize: 19.0,
-                                                fontWeight: FontWeight.w600),
+                                              color: lightGreen100,
+                                              fontSize: 19.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -172,7 +220,7 @@ class _ContactPageState extends State<ContactPage> {
   }
 
   Widget contactFormField(String name, int maxLine, String hintText,
-      TextEditingController controller) {
+      TextEditingController controller, String? Function(String?)? validator) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
@@ -188,9 +236,10 @@ class _ContactPageState extends State<ContactPage> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: TextField(
+            child: TextFormField(
               controller: controller,
               maxLines: maxLine,
+              validator: validator,
               decoration: InputDecoration(
                 hintText: hintText,
                 border: OutlineInputBorder(

@@ -30,14 +30,20 @@ class _AboutPageState extends State<AboutPage> {
             children: [
               IconButton(
                   onPressed: () => _controllerPageView.previousPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_left_outlined)),
+                      curve: Curves.bounceIn,
+                      duration: const Duration(seconds: 1)),
+                  icon: Icon(
+                    Icons.arrow_upward_outlined,
+                    color: lightOlive,
+                  )),
               IconButton(
                   onPressed: () => _controllerPageView.nextPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_right_outlined)),
+                      duration: const Duration(seconds: 3),
+                      curve: Curves.bounceOut),
+                  icon: Icon(
+                    Icons.arrow_downward_outlined,
+                    color: lightOlive,
+                  )),
             ],
           ),
         ),

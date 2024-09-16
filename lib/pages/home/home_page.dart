@@ -733,8 +733,10 @@ class _HomePage1State extends State<HomePage1> {
                                   spaceBetweenItem: 16,
                                   children: [
                                     ExpansionTileItem(
-                                      collapsedIconColor: canaryYellow,
                                       iconColor: darkOlive,
+                                      maintainState: true,
+                                      initiallyExpanded: true,
+                                      collapsedIconColor: canaryYellow,
                                       title: Row(
                                         children: [
                                           Container(
