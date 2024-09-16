@@ -1,6 +1,6 @@
 # yannble
 
-A new Flutter project.
+A portfolio showcasing Yann Blé's projects and skills.
 
 ## Getting Started
 
