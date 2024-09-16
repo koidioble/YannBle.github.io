@@ -13,12 +13,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Yann Blé - Portfolio',
+      title: 'Koidio (Y.) Blé - Portfolio',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
-        //   fontFamily: GoogleFonts.tinos().fontFamily,
         fontFamily: GoogleFonts.ubuntu().fontFamily,
-
         useMaterial3: true,
       ),
       home: const HomePage1(),

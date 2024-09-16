@@ -357,7 +357,7 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                                 ),
                                 const SizedBox(height: 90),
                                 Text(
-                                  'Flutter Development',
+                                  'Mobile Development',
                                   style: GoogleFonts.ubuntuMono(
                                     color: lightOlive,
                                     fontSize: 33,

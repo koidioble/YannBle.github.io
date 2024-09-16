@@ -13,12 +13,14 @@ class PortfolioLink extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(color: midOlive),
         child: Padding(
-          padding: const EdgeInsets.all(3),
+          padding: const EdgeInsets.all(9),
           child: Text(
             "https://koidioble.github.io/portfolio/",
             style: GoogleFonts.ubuntuMono(
-              color: Colors.lime[100],
+              color: lime100,
               fontWeight: FontWeight.w300,
+              decorationColor: lime100,
+              decorationThickness: 6,
               decoration: TextDecoration.underline,
             ),
           ),

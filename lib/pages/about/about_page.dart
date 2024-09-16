@@ -625,7 +625,7 @@ class _AboutPageState extends State<AboutPage> {
                         SingleChildScrollView(
                           child: Column(
                             children: [
-                              MyDivider(),
+                              const MyDivider(),
                               Text(
                                 "3 / 3",
                                 style: GoogleFonts.ubuntuMono(

@@ -57,7 +57,7 @@ class _HomePage1State extends State<HomePage1> {
                       const SizedBox(height: 300),
 
                       Padding(
-                        padding: EdgeInsets.only(left: 60),
+                        padding: const EdgeInsets.only(left: 60),
                         child: Row(
                           children: [
                             Text('Koidio (Y.) Blé',
@@ -67,7 +67,7 @@ class _HomePage1State extends State<HomePage1> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 63),
+                        padding: const EdgeInsets.only(left: 63),
                         child: Row(
                           children: [
                             Text('  Developer',
@@ -262,8 +262,7 @@ class _HomePage1State extends State<HomePage1> {
                                                 border: Border.all(
                                                     color: transparentColor)),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
+                                              padding: const EdgeInsets.all(9),
                                               child: Text(
                                                 'Koidio (Y.) Blé.',
                                                 style: GoogleFonts.ubuntuMono(
@@ -299,8 +298,7 @@ class _HomePage1State extends State<HomePage1> {
                                                 border: Border.all(
                                                     color: transparentColor)),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
+                                              padding: const EdgeInsets.all(9),
                                               child: Text(
                                                 'Developer.',
                                                 style: GoogleFonts.ubuntuMono(
@@ -336,8 +334,7 @@ class _HomePage1State extends State<HomePage1> {
                                                 border: Border.all(
                                                     color: transparentColor)),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(3.0),
+                                              padding: const EdgeInsets.all(9),
                                               child: Text(
                                                 'Coding.',
                                                 style: GoogleFonts.ubuntuMono(
@@ -429,7 +426,13 @@ class _HomePage1State extends State<HomePage1> {
                                                 children: <Widget>[
                                                   InkWell(
                                                     hoverColor: lightOlive,
-                                                    onTap: () {},
+                                                    onTap: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  const ConsultancyPage()));
+                                                    },
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -551,7 +554,7 @@ class _HomePage1State extends State<HomePage1> {
                                                 padding:
                                                     const EdgeInsets.all(3.0),
                                                 child: Text(
-                                                  " ∙ Flutter Development.",
+                                                  " ∙ Mobile Development.",
                                                   style: GoogleFonts.ubuntuMono(
                                                     color: Colors.lime[100],
                                                     fontWeight: FontWeight.w300,
@@ -664,7 +667,13 @@ class _HomePage1State extends State<HomePage1> {
                                                 children: [
                                                   InkWell(
                                                     hoverColor: lightOlive,
-                                                    onTap: () {},
+                                                    onTap: () {
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  const ContactPage()));
+                                                    },
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsets.all(
@@ -720,6 +729,7 @@ class _HomePage1State extends State<HomePage1> {
                                   spaceBetweenItem: 16,
                                   children: [
                                     ExpansionTileItem(
+                                      initiallyExpanded: true,
                                       collapsedIconColor: canaryYellow,
                                       iconColor: darkOlive,
                                       title: Row(

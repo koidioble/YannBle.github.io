@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 Color darkOlive = const Color(0xFF111806);
@@ -23,3 +21,7 @@ Color lightGreen300 = Colors.lightGreen.shade300;
 Color green100 = Colors.green.shade100;
 
 Color green300 = Colors.green.shade300;
+
+Color lime100 = Colors.lime.shade100;
+
+Color lime300 = Colors.lime.shade300;

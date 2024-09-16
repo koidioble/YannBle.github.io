@@ -209,7 +209,7 @@ class HomePage extends StatelessWidget {
                                         ],
                                       ),
                                       expandedAlignment: Alignment.centerLeft,
-                                      childrenPadding: EdgeInsets.all(16),
+                                      childrenPadding: const EdgeInsets.all(16),
                                       children: [
                                         Text(
                                           '∙ Name: Koidio (Y.) Blé',
@@ -360,7 +360,7 @@ class HomePage extends StatelessWidget {
                                           ),
                                           expandedAlignment:
                                               Alignment.centerLeft,
-                                          childrenPadding: EdgeInsets.all(16),
+                                          childrenPadding: const EdgeInsets.all(16),
                                           children: [
                                             Text(
                                               "∙ Web Designer.",
@@ -502,7 +502,7 @@ class HomePage extends StatelessWidget {
                                           ),
                                           expandedAlignment:
                                               Alignment.centerLeft,
-                                          childrenPadding: EdgeInsets.all(16),
+                                          childrenPadding: const EdgeInsets.all(16),
                                           children: [
                                             Text(
                                               "∙ Email",
