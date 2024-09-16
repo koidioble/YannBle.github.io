@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Koidio (Y.) Blé - Portfolio',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lime),
         //   fontFamily: GoogleFonts.tinos().fontFamily,
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const HomePage1(),
     );
   }
 }

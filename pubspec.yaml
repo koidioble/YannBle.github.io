@@ -29,11 +29,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  expansion_tile_group: ^2.0.0
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
   mailer: ^6.1.2
   simple_animations: ^5.0.2
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_lints: ^4.0.0
@@ -59,6 +61,11 @@ flutter:
     - assets/pics/pic1.png
     - assets/pics/pic2.png
     - assets/pics/pic_f.png
+    - assets/logo/github_logo.png
+    - assets/logo/gmail_logo.png
+    - assets/logo/instagram_logo.png
+    - assets/logo/linkedin_logo.png
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
