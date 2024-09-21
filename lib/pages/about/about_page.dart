@@ -18,36 +18,30 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          "who am I.",
-          style: TextStyle(color: lightOlive),
-        ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(30.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () => _controllerPageView.previousPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: Icon(
-                    Icons.keyboard_arrow_up_outlined,
-                    color: lightOlive,
-                  )),
-              IconButton(
-                  onPressed: () => _controllerPageView.nextPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: Icon(
-                    Icons.keyboard_arrow_down_outlined,
-                    color: lightOlive,
-                  )),
-            ],
+        backgroundColor: Colors.grey[200], // Changed to a light grey
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left_outlined,
+            color: lightOlive,
           ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        iconTheme: IconThemeData(color: lightOlive),
+        title: Column(
+          children: [
+            Text(
+              "who am I.",
+              style: TextStyle(color: lightOlive),
+            ),
+            Icon(
+              Icons.keyboard_arrow_up_outlined,
+              color: lightOlive,
+            ),
+          ],
+        ),
+        iconTheme:
+            IconThemeData(color: darkOlive), // Changed to match icon color
       ),
       backgroundColor: lightOlive,
       body: SingleChildScrollView(
@@ -84,6 +78,31 @@ class _AboutPageState extends State<AboutPage> {
                         SingleChildScrollView(
                           child: Column(
                             children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.previousPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_left_outlined,
+                                        color: lightOlive,
+                                      )),
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.nextPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_right_outlined,
+                                        color: lightOlive,
+                                      )),
+                                ],
+                              ),
                               const MyDivider(),
                               Text(
                                 "1 / 3",
@@ -355,6 +374,31 @@ class _AboutPageState extends State<AboutPage> {
                         SingleChildScrollView(
                           child: Column(
                             children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.previousPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_left_outlined,
+                                        color: lightOlive,
+                                      )),
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.nextPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_right_outlined,
+                                        color: lightOlive,
+                                      )),
+                                ],
+                              ),
                               const MyDivider(),
                               Text(
                                 "2 / 3",
@@ -625,6 +669,31 @@ class _AboutPageState extends State<AboutPage> {
                         SingleChildScrollView(
                           child: Column(
                             children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.previousPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_left_outlined,
+                                        color: lightOlive,
+                                      )),
+                                  IconButton(
+                                      onPressed: () =>
+                                          _controllerPageView.nextPage(
+                                              duration:
+                                                  const Duration(seconds: 1),
+                                              curve: Curves.easeInOut),
+                                      icon: Icon(
+                                        Icons.keyboard_arrow_right_outlined,
+                                        color: lightOlive,
+                                      )),
+                                ],
+                              ),
                               const MyDivider(),
                               Text(
                                 "3 / 3",

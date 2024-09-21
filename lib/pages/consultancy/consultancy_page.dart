@@ -25,28 +25,19 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: white,
+        backgroundColor: Colors.grey[200], // Changed to a light grey
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left_outlined,
+            color: lightOlive,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text(
           "what I do.",
           style: TextStyle(color: lightOlive),
-        ),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(30.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              IconButton(
-                  onPressed: () => _controllerPageView.previousPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_left_outlined)),
-              IconButton(
-                  onPressed: () => _controllerPageView.nextPage(
-                      duration: const Duration(seconds: 1),
-                      curve: Curves.easeInOut),
-                  icon: const Icon(Icons.keyboard_arrow_right_outlined)),
-            ],
-          ),
         ),
       ),
       backgroundColor: lightOlive,
@@ -96,6 +87,31 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                             ),
                             child: Column(
                               children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.previousPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_left_outlined,
+                                          color: lightOlive,
+                                        )),
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.nextPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_right_outlined,
+                                          color: lightOlive,
+                                        )),
+                                  ],
+                                ),
                                 const MyDivider(),
                                 Text(
                                   "1 / 3",
@@ -349,6 +365,31 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                             color: transparentColor,
                             child: Column(
                               children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.previousPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_left_outlined,
+                                          color: lightOlive,
+                                        )),
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.nextPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_right_outlined,
+                                          color: lightOlive,
+                                        )),
+                                  ],
+                                ),
                                 const MyDivider(),
                                 Text(
                                   "2 / 3",
@@ -571,6 +612,31 @@ class _ConsultancyPageState extends State<ConsultancyPage> {
                             color: transparentColor,
                             child: Column(
                               children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.previousPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_left_outlined,
+                                          color: lightOlive,
+                                        )),
+                                    IconButton(
+                                        onPressed: () =>
+                                            _controllerPageView.nextPage(
+                                                duration:
+                                                    const Duration(seconds: 1),
+                                                curve: Curves.easeInOut),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_right_outlined,
+                                          color: lightOlive,
+                                        )),
+                                  ],
+                                ),
                                 const MyDivider(),
                                 Text(
                                   "3 / 3",

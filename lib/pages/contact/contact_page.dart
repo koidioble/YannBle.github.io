@@ -24,155 +24,170 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[200], // Changed to a light grey
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left_outlined,
+            color: lightOlive,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text(
           "Send Me a Message.",
           style: TextStyle(color: lightOlive),
         ),
-        backgroundColor: white,
         iconTheme: IconThemeData(color: lightOlive),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              lightOlive,
-              Colors.white,
-            ],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
-          ),
-          borderRadius: BorderRadius.circular(9),
-        ),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              Card(
-                elevation: 9,
-                child: Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        lightOlive,
-                        Colors.white,
-                      ],
-                      begin: Alignment.bottomCenter,
-                      end: Alignment.topCenter,
-                    ),
-                    borderRadius: BorderRadius.circular(9),
+      backgroundColor: lightOlive,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            Card(
+              elevation: 9,
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      lightOlive,
+                      Colors.white,
+                    ],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
                   ),
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const SizedBox(height: 10),
-                        SizedBox(
-                          width: Responsive.isMobile(context)
-                              ? Responsive.widthOfScreen(context) * 0.9
-                              : Responsive.widthOfScreen(context) * 0.8,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    color: lightOlive,
-                                    blurRadius: 4,
-                                    spreadRadius: 2),
-                              ],
-                              borderRadius: BorderRadius.circular(10),
-                              color: white,
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(20),
-                              child: Column(
-                                children: [
-                                  contactFormField(
-                                      'Name', 1, "Your Name", _nameController),
-                                  contactFormField('Email', 1, "Your Email",
-                                      _emailController),
-                                  contactFormField('Phone Number', 1,
-                                      "Your Phone Number", _phoneController),
-                                  contactFormField("Message", 12,
-                                      "Your Message", _messageController),
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: OutlinedButton(
-                                          style: ButtonStyle(
-                                            side: WidgetStateProperty.all(
-                                                BorderSide(
-                                                    color: lightOlive,
-                                                    width: 2)),
-                                            backgroundColor:
-                                                WidgetStateProperty.all(
-                                                    Colors.black),
-                                          ),
-                                          onPressed: () async {
-                                            if (_formKey.currentState!
-                                                .validate()) {
-                                              // Collect the data from the text controllers
-                                              String name =
-                                                  _nameController.text;
-                                              String email =
-                                                  _emailController.text;
-                                              String phone =
-                                                  _phoneController.text;
-                                              String message =
-                                                  _messageController.text;
+                  borderRadius: BorderRadius.circular(9),
+                ),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      const SizedBox(height: 10),
+                      SizedBox(
+                        width: Responsive.isMobile(context)
+                            ? Responsive.widthOfScreen(context) * 0.9
+                            : Responsive.widthOfScreen(context) * 0.8,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  color: lightOlive,
+                                  blurRadius: 4,
+                                  spreadRadius: 2),
+                            ],
+                            borderRadius: BorderRadius.circular(10),
+                            color: white,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Column(
+                              children: [
+                                contactFormField(
+                                  'Name',
+                                  1,
+                                  "Your Name",
+                                  _nameController,
+                                  validateName,
+                                ),
+                                contactFormField(
+                                  'Email',
+                                  1,
+                                  "Your Email",
+                                  _emailController,
+                                  validateEmail,
+                                ),
+                                contactFormField(
+                                  'Phone Number',
+                                  1,
+                                  "Your Phone Number",
+                                  _phoneController,
+                                  validatePhone,
+                                ),
+                                contactFormField(
+                                  "Message",
+                                  12,
+                                  "Your Message",
+                                  _messageController,
+                                  validateMessage,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: OutlinedButton(
+                                        style: ButtonStyle(
+                                          side: WidgetStateProperty.all(
+                                              BorderSide(
+                                                  color: lightOlive, width: 2)),
+                                          backgroundColor:
+                                              WidgetStateProperty.all(
+                                                  Colors.black),
+                                        ),
+                                        onPressed: () async {
+                                          if (_formKey.currentState!
+                                              .validate()) {
+                                            // Collect the data from the text controllers
+                                            String name = _nameController.text;
+                                            String email =
+                                                _emailController.text;
+                                            String phone =
+                                                _phoneController.text;
+                                            String message =
+                                                _messageController.text;
 
-                                              // Call the sendEmail function
-                                              await sendEmail(
-                                                  email, message, name, phone);
+                                            // Call the sendEmail function
+                                            await sendEmail(
+                                                email, message, name, phone);
 
-                                              // Optionally show a success message
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(const SnackBar(
-                                                content: Text(
-                                                    'Message sent successfully!'),
-                                              ));
+                                            // Optionally show a success message
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(const SnackBar(
+                                              content: Text(
+                                                  'Message sent successfully!'),
+                                            ));
 
-                                              // Clear the form fields
-                                              _nameController.clear();
-                                              _emailController.clear();
-                                              _phoneController.clear();
-                                              _messageController.clear();
-                                            }
-                                          },
-                                          child: Text(
-                                            "Submit",
-                                            style: TextStyle(
-                                                color: lightGreen100,
-                                                fontSize: 19.0,
-                                                fontWeight: FontWeight.w600),
-                                          ),
+                                            // Clear the form fields
+                                            _nameController.clear();
+                                            _emailController.clear();
+                                            _phoneController.clear();
+                                            _messageController.clear();
+                                          }
+                                        },
+                                        child: Text(
+                                          "Submit",
+                                          style: TextStyle(
+                                              color: lightGreen100,
+                                              fontSize: 19.0,
+                                              fontWeight: FontWeight.w600),
                                         ),
                                       ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: MyDivider(),
-                        )
-                      ],
-                    ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: MyDivider(),
+                      )
+                    ],
                   ),
                 ),
               ),
-              const MySignature()
-            ],
-          ),
+            ),
+            const MySignature()
+          ],
         ),
       ),
     );
   }
 
   Widget contactFormField(String name, int maxLine, String hintText,
-      TextEditingController controller) {
+      TextEditingController controller, String? Function(String?) validator) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
       child: Column(
@@ -188,9 +203,10 @@ class _ContactPageState extends State<ContactPage> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
-            child: TextField(
+            child: TextFormField(
               controller: controller,
               maxLines: maxLine,
+              validator: validator,
               decoration: InputDecoration(
                 hintText: hintText,
                 border: OutlineInputBorder(
@@ -237,5 +253,47 @@ class _ContactPageState extends State<ContactPage> {
     } catch (e) {
       print('An unexpected error occurred: $e');
     }
+  }
+
+  String? validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your name';
+    }
+    if (value.length < 2) {
+      return 'Name must be at least 2 characters long';
+    }
+    return null;
+  }
+
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    }
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(value)) {
+      return 'Please enter a valid email address';
+    }
+    return null;
+  }
+
+  String? validatePhone(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your phone number';
+    }
+    final phoneRegex = RegExp(r'^\+?[\d\s-]{10,14}$');
+    if (!phoneRegex.hasMatch(value)) {
+      return 'Please enter a valid phone number';
+    }
+    return null;
+  }
+
+  String? validateMessage(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter a message';
+    }
+    if (value.length < 10) {
+      return 'Message must be at least 10 characters long';
+    }
+    return null;
   }
 }
